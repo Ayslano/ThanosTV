@@ -44,7 +44,7 @@ if REMOTE_DBG:
         sys.exit(1)
 
 
-addon = xbmcaddon.Addon('plugin.video.thanostv')
+addon = xbmcaddon.Addon('plugin.video.ThanosTV')
 addon_version = addon.getAddonInfo('version')
 profile = xbmc.translatePath(addon.getAddonInfo('profile').decode('utf-8'))
 home = xbmc.translatePath(addon.getAddonInfo('path').decode('utf-8'))
@@ -81,7 +81,7 @@ def get_data_listas(url):
 
 def addon_log(string):
     if debug == 'true':
-        xbmc.log("[addon.ThanosTv-%s]: %s" %(addon_version, string))
+        xbmc.log("[addon.BrazucaPlay-%s]: %s" %(addon_version, string))
 
 
 def makeRequest(url, headers=None):
@@ -222,7 +222,7 @@ def addSource(url=None):
             b.close()
         addon.setSetting('new_url_source', "")
         addon.setSetting('new_file_source', "")
-        xbmc.executebuiltin("XBMC.Notification(ThanosTv,New source added.,5000,"+icon+")")
+        xbmc.executebuiltin("XBMC.Notification(BrazucaPlay,New source added.,5000,"+icon+")")
         if not url is None:
             if 'xbmcplus.xb.funpic.de' in url:
                 xbmc.executebuiltin("XBMC.Container.Update(%s?mode=14,replace)" %sys.argv[0])
